@@ -1,11 +1,13 @@
-function ExpenseTracker() {
+import "./ExpenseItem.css"
+function ExpenseTracker(props) {
     return(
-        <div>
-            <ul>
-                <li>Food Rs 10</li>
-                <li>Petrol Rs 100</li>
-                <li>Movies Rs 200</li>
-            </ul>
+        <div className="expense-item">
+            <div>{props.expensesData.date}</div>
+            <div className="expense-item__description">
+                <h2>{props.expensesData.title}</h2>
+                <h2>{props.expensesData.LocationOfExpenditure}</h2>
+                <div  className="expense-item__price">${props.expensesData.amount}</div>
+            </div>
         </div>
     );
 }
