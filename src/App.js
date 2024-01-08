@@ -4,31 +4,31 @@ function App() {
     {
       title : "Car Insurance",
       amount : 287.78,
-      date : new Date(2023, 2, 28).toDateString(),
+      date : new Date(2023, 2, 28),
       LocationOfExpenditure : "Wari"
     },
     {
       title : "Car Repairs",
       amount : 256.48,
-      date : new Date(2023, 2, 31).toDateString(),
+      date : new Date(2023, 2, 31),
       LocationOfExpenditure : "Bihar"
     },
     {
       title : "Office supplies",
       amount : 2000.70,
-      date : new Date(2023, 6, 11).toDateString(),
+      date : new Date(2023, 6, 11),
       LocationOfExpenditure : "Singhia"
     },
     {
       title : "Bank charges",
       amount : 254.79,
-      date : new Date(2023, 5, 5).toDateString(),
+      date : new Date(2023, 5, 5),
       LocationOfExpenditure : "Samastipur"
     },
     {
       title : "Travel expenses",
       amount : 27865.89,
-      date : new Date(2023, 4, 25).toDateString(),
+      date : new Date(2023, 4, 25),
       LocationOfExpenditure : "India"
     }
   ];
