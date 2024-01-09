@@ -26,14 +26,21 @@
   color: white;
 }
 
-.expense-item__price {
+.expense-item__price, button {
   font-size: 1rem;
   font-weight: bold;
   color: white;
   background-color: #40005d;
   border: 1px solid white;
   padding: 0.5rem;
-  border-radius: 12px;
+  border-radius: 5px;
+}
+
+button{
+  font-size: 19px;
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 @media (min-width: 580px) {
