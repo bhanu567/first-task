@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Expenses from "./Components/Expenses/Expenses";
 import NewExpenses from "./Components/New Expense/NewExpenses";
 function App() {
@@ -35,8 +35,6 @@ function App() {
     },
   ];
 
-  const expenseForm = () => <NewExpenses/> ;
-
   //In the recent upgradation, you need not necesserily write "import React from "react";" in each and every file, but the first work that is done is converting the return code like the below written code as                 React.createElement("tagName" , {attributes as an object}, content1, content2, content3, ...........); we will not write code like this because it is not readable. Here one can clearly see that we must need a wrapper element.
   //you can return an array of elements but still we need array name i.e. array elements
   // return (
@@ -47,10 +45,11 @@ function App() {
   //   ),
   //   React.createElement(Expenses, { items: expenses })
   // );
+
   return (
     <div>
       <h1>Lets's Get Started</h1>
-      <NewExpenses/>
+      <NewExpenses />
       <Expenses items={expenses}></Expenses>
     </div>
   );
