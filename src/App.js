@@ -45,11 +45,15 @@ function App() {
   //   ),
   //   React.createElement(Expenses, { items: expenses })
   // );
+  const addExpenseDataHandler = (newExpenseItem) => {
+    expenses.push(newExpenseItem);
+    console.log(expenses);
+  }
 
   return (
     <div>
       <h1>Lets's Get Started</h1>
-      <NewExpenses />
+      <NewExpenses onNewExpenseData={addExpenseDataHandler}/>
       <Expenses items={expenses}></Expenses>
     </div>
   );
