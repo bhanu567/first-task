@@ -6,6 +6,7 @@ function NewExpenses(props) {
         const newExpense = {
             ...newExpenseData,
             LocationOfExpenditure : "Wari",
+            id : "e6",
         }
         props.onNewExpenseData(newExpense);
     }
