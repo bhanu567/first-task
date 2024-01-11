@@ -1,8 +1,18 @@
+import react, {useState} from "react";
+
 import ExpenseTracker from "./ExpenseTracker";
+import ExpensesFilter from "./ExpenseFilter";
 const Expenses = (props) => {
+  const [filteredYear, setFilteredYear] = useState('2020');
+
+  const filterChangeHandler = selectedYear => {
+    setFilteredYear(selectedYear);
+  };
+
   return (
     <>
-      {props.items.map((datas) => (<ExpenseTracker expensesData={datas} />))}
+    <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+      {Array.isArray(props.items)  ? props.items.map((datas) => (<ExpenseTracker expensesData={datas} />)):"Jai Hind"}
 
       {/* <ExpenseTracker expensesData={props.items[0]}/>
         <ExpenseTracker expensesData={props.items[1]}/>

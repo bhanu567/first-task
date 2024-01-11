@@ -26,6 +26,8 @@ const ExpenseTracker = (props) => {
   const clickHandler3 = (e) => {
     e.target.parentElement.remove();
   }
+
+
   return (
     <Card className="expense-item">
       <ExpenseDate Date={props.expensesData.date}></ExpenseDate>
