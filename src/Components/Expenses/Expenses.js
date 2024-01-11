@@ -22,7 +22,7 @@ const Expenses = (props) => {
       </>
     ));
 
-  let filteredLengthAny = filteredExpenses.length != 1 && filteredExpenses.map((datas) => (
+  let filteredLengthAny = filteredExpenses.length !== 1 && filteredExpenses.map((datas) => (
     <ExpenseTracker key={datas.id} expensesData={datas} />
   ));
 

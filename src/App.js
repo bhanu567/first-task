@@ -39,7 +39,7 @@ const DummyData = [
   },
 ];
 function App() {
-  const [renderNewExpense, setRenderNewExpense] = useState(false);
+  
   const [expenses, setNewExpenses] = useState(DummyData);
 
   //In the recent upgradation, you need not necesserily write "import React from "react";" in each and every file, but the first work that is done is converting the return code like the below written code as                 React.createElement("tagName" , {attributes as an object}, content1, content2, content3, ...........); we will not write code like this because it is not readable. Here one can clearly see that we must need a wrapper element.
@@ -57,21 +57,12 @@ function App() {
     setNewExpenses((prevExpenses) => {
       return [...prevExpenses, newExpenseItem, ];
     });
-    setRenderNewExpense(false);
   };
-  const clickHandler = () => {
-    setRenderNewExpense(true);
-  };
+
   return (
     <div>
       <h1>Lets's Get Started</h1>
-
-      {renderNewExpense ? (
-        <NewExpenses onNewExpenseData={addExpenseDataHandler} />
-      ) : (
-        <button onClick={clickHandler}>Add Expenses</button>
-      )}
-
+      <NewExpenses onNewExpenseData={addExpenseDataHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
   );
