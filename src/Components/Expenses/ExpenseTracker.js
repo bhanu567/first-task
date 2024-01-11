@@ -32,7 +32,6 @@ const ExpenseTracker = (props) => {
     <Card className="expense-item">
       <ExpenseDate Date={props.expensesData.date}></ExpenseDate>
       <ExpenseDetails
-        key = {props.expensesData.id}
         title={title}
         LocationOfExpenditure={props.expensesData.LocationOfExpenditure}
         amount={amount}

@@ -4,15 +4,21 @@ import ExpenseTracker from "./ExpenseTracker";
 import ExpensesFilter from "./ExpenseFilter";
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
-
+  const [filteredExpenses, setFilteredExpenses ] =useState(props.items);
   const filterChangeHandler = selectedYear => {
+    const filtered = props.items.filter(expenses => {
+      if (expenses.date.getFullYear()==selectedYear) {
+        return props.items;
+      }
+    });
     setFilteredYear(selectedYear);
+    setFilteredExpenses(filtered)
   };
 
   return (
     <>
     <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-      {Array.isArray(props.items)  ? props.items.map((datas) => (<ExpenseTracker expensesData={datas} />)):"Jai Hind"}
+      {filteredExpenses.map((datas) => (<ExpenseTracker key={datas.id} expensesData={datas} />))}
 
       {/* <ExpenseTracker expensesData={props.items[0]}/>
         <ExpenseTracker expensesData={props.items[1]}/>

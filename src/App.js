@@ -1,41 +1,43 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Expenses from "./Components/Expenses/Expenses";
 import NewExpenses from "./Components/New Expense/NewExpenses";
-const DummyData = [{
-  id : "e1",
-  title: "Car Insurance",
-  amount: 287.78,
-  date: new Date(2023, 2, 28),
-  LocationOfExpenditure: "Wari",
-},
-{
-  id : "e2",
-  title: "Car Repairs",
-  amount: 256.48,
-  date: new Date(2023, 2, 31),
-  LocationOfExpenditure: "Bihar",
-},
-{
-  id : "e3",
-  title: "Office supplies",
-  amount: 2000.7,
-  date: new Date(2023, 6, 11),
-  LocationOfExpenditure: "Singhia",
-},
-{
-  id : "e4",
-  title: "Bank charges",
-  amount: 254.79,
-  date: new Date(2023, 5, 5),
-  LocationOfExpenditure: "Samastipur",
-},
-{
-  id : "e5",
-  title: "Travel expenses",
-  amount: 27865.89,
-  date: new Date(2023, 4, 25),
-  LocationOfExpenditure: "India",
-},];
+const DummyData = [
+  {
+    id: "e1",
+    title: "Car Insurance",
+    amount: 287.78,
+    date: new Date(2019, 2, 28),
+    LocationOfExpenditure: "Wari",
+  },
+  {
+    id: "e2",
+    title: "Car Repairs",
+    amount: 256.48,
+    date: new Date(2022, 2, 31),
+    LocationOfExpenditure: "Bihar",
+  },
+  {
+    id: "e3",
+    title: "Office supplies",
+    amount: 2000.7,
+    date: new Date(2021, 6, 11),
+    LocationOfExpenditure: "Singhia",
+  },
+  {
+    id: "e4",
+    title: "Bank charges",
+    amount: 254.79,
+    date: new Date(2020, 5, 5),
+    LocationOfExpenditure: "Samastipur",
+  },
+  {
+    id: "e5",
+    title: "Travel expenses",
+    amount: 27865.89,
+    date: new Date(2019, 4, 25),
+    LocationOfExpenditure: "India",
+  },
+];
 function App() {
   const [renderNewExpense, setRenderNewExpense] = useState(false);
   const [expenses, setNewExpenses] = useState(DummyData);
@@ -51,19 +53,25 @@ function App() {
   //   React.createElement(Expenses, { items: expenses })
   // );
   const addExpenseDataHandler = (newExpenseItem) => {
-    // setNewExpenses([...expenses, newExpenseItem]); (said earlier it is not a good idea, when your current state depends on the previous state as in this case, your new array should have previous element)
-    setNewExpenses(prevExpenses => {return [newExpenseItem, ...prevExpenses]});
+    // setNewExpenses([...expenses, newExpenseItem]); //(said earlier it is not a good idea, when your current state depends on the previous state as in this case, your new array should have previous element)
+    setNewExpenses((prevExpenses) => {
+      return [...prevExpenses, newExpenseItem, ];
+    });
     setRenderNewExpense(false);
-  }
-  const clickHandler = () =>{
+  };
+  const clickHandler = () => {
     setRenderNewExpense(true);
-  }
+  };
   return (
     <div>
       <h1>Lets's Get Started</h1>
 
-      {renderNewExpense ? (<NewExpenses onNewExpenseData={addExpenseDataHandler}/>) : (<button onClick={clickHandler}>Add Expenses</button>)}
-      
+      {renderNewExpense ? (
+        <NewExpenses onNewExpenseData={addExpenseDataHandler} />
+      ) : (
+        <button onClick={clickHandler}>Add Expenses</button>
+      )}
+
       <Expenses items={expenses}></Expenses>
     </div>
   );
