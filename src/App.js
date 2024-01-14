@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Expenses from "./Components/Expenses/Expenses";
 import NewExpenses from "./Components/New Expense/NewExpenses";
+
 const DummyData = [
   {
     id: "e1",
@@ -19,7 +20,7 @@ const DummyData = [
   {
     id: "e3",
     title: "Office supplies",
-    amount: 2000.7,
+    amount: 200.7,
     date: new Date(2021, 6, 11),
     LocationOfExpenditure: "Singhia",
   },
@@ -33,7 +34,7 @@ const DummyData = [
   {
     id: "e5",
     title: "Travel expenses",
-    amount: 27865.89,
+    amount: 285.89,
     date: new Date(2019, 4, 25),
     LocationOfExpenditure: "India",
   },

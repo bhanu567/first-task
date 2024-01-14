@@ -4,8 +4,6 @@ import ExpenseForm from "./ExpenseForm";
 function NewExpenses(props) {
   const [renderNewExpense, setRenderNewExpense] = useState(false);
   const saveExpenseDataHandler = (newExpenseData) => {
-    if(newExpenseData === null)setRenderNewExpense(false);
-    else{
       const newExpense = {
         ...newExpenseData,
         LocationOfExpenditure: "Wari",
@@ -13,17 +11,19 @@ function NewExpenses(props) {
       };
       props.onNewExpenseData(newExpense);
       setRenderNewExpense(false);
-    }
-    
   };
   const clickHandler = () => {
+    setRenderNewExpense(true);
+  };
+
+  const cancelHandler = () => {
     setRenderNewExpense(true);
   };
 
   return (
     <div className="new-expense">
       {renderNewExpense && (
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancle={cancelHandler}/>
       )}
       {!renderNewExpense && <button onClick={clickHandler}>Add Expenses</button>}
     </div>

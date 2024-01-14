@@ -2,6 +2,7 @@ import react, { useState } from "react";
 
 import ExpenseTracker from "./ExpenseTracker";
 import ExpensesFilter from "./ExpenseFilter";
+import ExpensesChart from "./ExpensesChart";
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
   const [filteredExpenses, setFilteredExpenses] = useState(props.items);
@@ -12,6 +13,7 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
     setFilteredExpenses(filtered);
   };
+  // const filteredExpenses = props.items.filter((expense)=> expense.date.getFullYear().toString()===filteredYear)
 
   let filteredLength1 =
     filteredExpenses.length === 1 &&
@@ -32,6 +34,7 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpensesChart expenses={filteredExpenses}/>
       {filteredLength1}
 
       {filteredLengthAny}

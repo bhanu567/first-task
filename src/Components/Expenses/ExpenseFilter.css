@@ -1,7 +1,7 @@
 .all{
   padding: 30px;
   background-color: rgba(91, 34, 144, 0.74);
-  border-radius: 8px;
+  border-radius: 8px; 
 }
 .expenses-filter {
   color: white;
