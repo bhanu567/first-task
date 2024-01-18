@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div>
-      <h1>Lets's Get Started</h1>
+      <h1>Let's Get Started</h1>
       <NewExpenses onNewExpenseData={addExpenseDataHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
